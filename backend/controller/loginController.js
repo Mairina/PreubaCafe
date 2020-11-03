@@ -19,17 +19,13 @@ class controlerLogin {
     }
     login = async(req, res) => {
         try {
-            console.log(req.body.mail)
             const [users] = await modelLogin.find({ mail: req.body.mail })
-            const validate = bcrypt.compare(req.body.password, users.password)
+            const validate = await bcrypt.compare(req.body.password, users.password)
             if (validate) {
-                console.log(" true ")
                 res.status(200).json(users)
             } else {
-                console.log(" false ")
                 res.status(200).json("Error en password")
             }
-            res.status(200).json(users)
         } catch (error) {
             res.status(400, json(error.menssage))
         }
