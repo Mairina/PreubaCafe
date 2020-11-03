@@ -1,0 +1,210 @@
+*{
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+.container {
+
+    width: 100%;
+    margin: auto;
+
+}
+
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-image: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.65),
+      rgba(0, 0, 0, 0.65)
+    ),
+    url('./netflix.jpg');
+    background-position: auto;
+    padding: 0px;
+    }
+
+   
+    *:focus {
+        outline: none;
+    }
+   .app-title{
+     padding: 30px 0px 0px 62px;
+   }
+    .login {
+      position: absolute;
+      top: 100px;
+      left: 450px;
+      right: 470px;
+      height: 600px;
+        }
+        .login-screen {
+        background-color: rgba(0, 0, 0, .5);
+        width: auto;
+        padding: 30px;
+        border-radius: 5px
+        }
+        p{
+          color: #8c8c8c;
+          font-size: 12px;
+          text-align: left;
+          padding: 30px 0px 0px 62px;
+        }
+        
+        .app-title {
+            color: #fff;
+            font-size: 21px;
+            font-weight: 700;
+            margin-bottom: 28px;
+        }
+        
+        .login-form {
+        text-align: center;
+        min-height: 360px;
+        }
+        .control-group {
+        margin-bottom: 10px;
+        }
+        
+        input {
+        text-align: center;
+        background-color: #333333;
+        border: 2px solid transparent;
+        border-radius: 5px;
+        font-size: 16px;
+        font-weight: 200;
+        padding: 10px 0;
+        width: 250px;
+        transition: border .5s;
+        margin: 4px;
+        color: white;
+        }
+        
+        input:focus {
+        border: 2px solid #e50914;
+        box-shadow: none;
+        }
+        
+        .btn {
+          padding:10%;  
+          border: 2px solid transparent;
+          background: #e50914;
+          font-weight: bold;
+          color: #ffffff;
+          font-size: 16px;
+          line-height: 25px;
+          padding: 10px 0;
+          text-decoration: none;
+          text-shadow: none;
+          border-radius: 5px;
+          box-shadow: none;
+          transition: 0.25s;
+          display: block;
+          width: 250px;
+          margin: 30px 0px 0px 62px;
+        }
+        
+        .btn:hover {
+          background-color: #ffffff;
+          color: #e50914;
+        }
+        .recordarme{
+          grid-template-rows:    repeat(2, 1fr);
+          grid-template-columns: repeat(3, 1fr);
+        }
+        .check{
+          margin: 10px 0px 0px 50px;
+          width: 10%;
+          
+        }
+     
+        .login-link {
+          font-size: 13px;
+          color: #fff;
+          margin: 40px;
+          text-decoration: none;
+
+        }
+        #recuerdame{
+          padding: 30px 0px 0px 2px;
+          font-size: 13px;
+          color: #fff;
+
+        }
+        .login-link:hover {
+         text-decoration: underline;
+        }
+header{
+    padding: 40px,0;
+}
+header.container{
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+footer{
+    background-color: rgba(0, 0, 0, .5);
+    padding: 40px,0;  
+}
+
+.footer-container{
+   padding: 35px 172px 70px 172px;
+   color: rgba(117, 117, 117, 1);
+   background-color: rgba(0, 0, 0, .5);
+   grid-template-rows:    repeat(4, 1fr);
+   grid-template-columns: repeat(4, 1fr);
+   font-family:'Open Sans', sans-serif;
+   display: grid;
+   grid-row-gap:    20px;
+   
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 650px;
+  
+}
+
+.footer-main{
+  font-size: 20px;
+  grid-row:    1;
+  grid-column: 1/4;
+   
+
+}
+.columna1{
+  grid-row:    2;
+  grid-column: 1/2;
+}
+.columna2{
+  grid-row:    2;
+  grid-column: 2/3;
+}
+.columna3{
+  grid-row:    2;
+  grid-column: 3/4;
+}
+.columna4{
+  grid-row:    2;
+  grid-column: 4/5;
+}
+.columna1:hover, .columna2:hover, .columna3:hover, .columna4:hover{
+ 
+  text-decoration: underline;
+}
+.columna1, .columna2, .columna3, .columna4{
+  font-size: 16px;
+  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+}
+.select{
+  border-radius: 2px;
+  width: 120px;
+  height: 40px;
+  grid-row:    3;
+  grid-column: 1/2;
+  background-color: rgba(0, 0, 0, 1);
+  color: rgba(117, 117, 117, 1)
+}
+.select:focus, option {
+  border: .5px solid #fff;
+}
