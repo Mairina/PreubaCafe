@@ -1,8 +1,9 @@
 const jwt = require("jsonwebtoken")
 
 const authMiddleware = async function(req, res, next) {
+    console.log(" middleware")
     console.log(req.headers)
-    const token = req.headers["authorization"] ? req.headers["authorization"].replace("Bearer ", "") : null
+    const token = req.headers["Authentication"] ? req.headers["Authentication"].replace("Bearer ", "") : null
     try {
         const userId = jwt.verify(token, process.env.SECRET_KEY)
         const user = await form.findOne({ _id: userId })

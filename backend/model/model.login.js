@@ -15,17 +15,26 @@ const loginSchema = new Schema({
         type: String,
         required: true
     },
-
     token: {
         type: [{ type: String }],
         required: true
-    }
+    },
+    ip: {
+        type: String
+    },
+    city: String
 }, {
     timestamps: true
 })
 
 loginSchema.methods.encryptPassword = async function() {
     this.password = await bcrypt.hash(this.password, 8)
+}
+loginSchema.methods.encryptIp = async function() {
+    this.ip = await bcrypt.hash(this.ip, 8)
+}
+loginSchema.methods.comparePassword = async function(users) {
+    return await bcrypt.compare(users, this.password)
 }
 
 
