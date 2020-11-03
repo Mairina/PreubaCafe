@@ -1,6 +1,6 @@
 const create = document.querySelector(".botonRegistro")
-const regisPassword=document.querySelector(".botonPassword")
-const message=document.querySelector(".containerRegistro")
+const regisPassword = document.querySelector(".botonPassword")
+const message = document.querySelector(".containerRegistro")
 const createContainer = document.querySelector(".container")
 const footer = document.querySelector(".footer")
 
@@ -12,43 +12,41 @@ let password
 
 
 
-const createUser=async()=>{
+const createUser = async() => {
     try {
         const { data } = await axios({
             method: "POST",
             baseURL: "http://127.0.0.1:4000",
-            url: "loginNetflix",
-            data: {  mail,  password }
+            url: "netflix",
+            data: { mail, password }
         })
         document.querySelector(".mostrarU").innerHTML = data.mail
-        localStorage.setItem("token", data.token) 
-        createWhite.style.display="none"
-        message.style.display="block"
+        localStorage.setItem("token", data.token)
+        createWhite.style.display = "none"
+        message.style.display = "flex"
 
     } catch (error) {
         console.log(error)
-       }
+    }
 }
 
 
 
 
-create.addEventListener("click",()=>{
-     mail=document.querySelector(".emailRegis").value
-    createContainer.style.display="none"
-    createWhite.style.display="block"
-    footer.style.background="#f3f3f3"
-    document.querySelector(".nombre").innerHTML=mail
+create.addEventListener("click", () => {
+    mail = document.querySelector(".emailRegis").value
+    createContainer.style.display = "none"
+    createWhite.style.display = "flex"
+    footer.style.background = "#f3f3f3"
+    document.querySelector(".nombre").innerHTML = mail
 
 })
 
 
 
-regisPassword.addEventListener("click",()=>{
+regisPassword.addEventListener("click", () => {
 
-    password=document.querySelector(".password").value
+    password = document.querySelector(".password").value
     createUser()
 
 })
-
-

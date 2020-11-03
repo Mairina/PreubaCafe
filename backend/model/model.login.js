@@ -15,22 +15,19 @@ const loginSchema = new Schema({
         type: String,
         required: true
     },
-            
+
     token: {
-        type: [{type: String}],
+        type: [{ type: String }],
         required: true
     }
 }, {
     timestamps: true
 })
 
-loginSchema.methods.encryptPassword = async function () {
+loginSchema.methods.encryptPassword = async function() {
     this.password = await bcrypt.hash(this.password, 8)
 }
 
-loginSchema.methods.comparePassword = async function () {
-    this.password = await bcrypt.hash(this.password, 8)
-}
 
 const login = new model("loginNetflix", loginSchema)
 module.exports = login
