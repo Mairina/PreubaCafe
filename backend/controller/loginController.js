@@ -1,20 +1,44 @@
+const modelLogin = require("../model/model.login")
 const jwt = require("jsonwebtoken")
-const form = require("../model_login/model_controler")
+const bcrypt = require("bcrypt")
 
-const authMiddleware = async function(req, res, next) {
-    const token = req.headers["authorization"] ? req.headers["authorization"].replace("Bearer ", "") : null
-    try {
-        const userId = jwt.verify(token, process.env.SECRET_KEY)
-        const user = await form.findOne({ _id: userId })
-        if (!user) return res.status(404).json("the user asigned to this token can no longer be found. Please verify if the account still exist")
-        req.user = user
-        req.token = token
-        next()
-    } catch (err) {
-        res.status(401).json("the user is not authorized. Please provide a valid token to proceed")
+class controlerLogin {
+    createLogin = async(req, res) => {
+        try {
+
+            const login = new modelLogin(req.body)
+            login.token = jwt.sign({ userId: login._id }, process.env.SECRET_KEY)
+            await login.encryptPassword()
+            const savedLogin = await login.save()
+            res.status(200).json(savedLogin)
+
+        } catch (error) {
+            console.log(error.message)
+            res.status(400).json(error)
+        }
+    }
+    login = async(req, res) => {
+        try {
+            console.log(req.body.mail)
+            const [users] = await modelLogin.find({ mail: req.body.mail })
+            const validate = bcrypt.compare(req.body.password, users.password)
+            if (validate) {
+                console.log(" true ")
+                res.status(200).json(users)
+            } else {
+                console.log(" false ")
+                res.status(200).json("Error en password")
+            }
+            res.status(200).json(users)
+        } catch (error) {
+            res.status(400, json(error.menssage))
+        }
+
+
+
+
     }
 }
 
-module.exports = {
-    authMiddleware,
-}
+const controllerLogin = new controlerLogin()
+module.exports = controllerLogin

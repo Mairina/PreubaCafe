@@ -5,6 +5,7 @@ const express = require("express")
 const helmet = require("helmet")
 const morgan = require("morgan")
 const cors = require("cors")
+const routeLogin = require("./routes/loginRoutes")
 
 const app = express()
 
@@ -17,6 +18,7 @@ app.get("/", (req, res) => {
     console.log("funciona")
     res.send("servidor conectado")
 })
+app.use("/netflix", routeLogin)
 
 
 module.exports = app
