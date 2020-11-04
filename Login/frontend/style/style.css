@@ -1,9 +1,7 @@
-@media screen and (max-width: 1200px) {
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 .container {
@@ -249,8 +247,8 @@ footer {
     background-color: #000;
     display: grid;
     padding: 40px 70px 40px 70px;
-    grid-template-rows: repeat(4, 55px);
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     color: #757575;
 }
 
@@ -270,7 +268,7 @@ h5 {
     flex-wrap: wrap;
     position: relative;
     grid-row: 1/1;
-    grid-column: 1/6;
+    grid-column: 1/5;
 }
 
 .culumna1 {
