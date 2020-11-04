@@ -1,9 +1,9 @@
 const { connection, connect } = require("mongoose")
 
 function dbConnection () {
-    //setUp of variables
+    
     const uri = process.env.URLBD
-
+      //setUp of variables
     const options = { 
         useNewUrlParser : true,
         useUnifiedTopology : true,
