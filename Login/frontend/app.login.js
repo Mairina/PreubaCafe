@@ -46,6 +46,6 @@ const valideUser = async() => {
 
 
 btnLogin.addEventListener("click", () => {
-    console.log("funcionac")
+    
     valideUser()
 })
