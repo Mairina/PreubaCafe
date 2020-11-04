@@ -1,6 +1,6 @@
 const modelLogin = require("../model/model.login")
 const jwt = require("jsonwebtoken")
-const bcrypt = require("bcrypt")
+
 
 class controlerLogin {
     createLogin = async(req, res) => {
