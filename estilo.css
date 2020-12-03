@@ -1,0 +1,70 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body 
+{
+    font-family: 'Open Sans', sans-serif;
+    background-image: linear-gradient( rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('cafeteria.jpg');
+    background-attachment:fixed;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: auto;
+    padding: 0px;
+    height: 850px;
+}
+
+.encabezado img
+{
+    float: left;
+}
+
+.encabezado h2
+{
+    color: #8c8c8c;
+    font-size: 24px;
+    text-align: left;
+    padding: 30px 0px 0px 62px;
+}
+
+#buscarProducto 
+{
+    padding: 10%;
+    border: 2px solid transparent;
+    background: #ccb08a;
+    font-weight: bold;
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 25px;
+    padding: 10px 0;
+    text-decoration: none;
+    text-shadow: none;
+    border-radius: 5px;
+    box-shadow: none;
+    transition: 0.25s;
+    display: block;
+    width: 150px;
+    margin: 30px 0px 0px 0px;
+    align-self: center;
+}
+
+.tablaProducto 
+{
+    height: 300px;
+    /*IMPORTANTE*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ 
+.imagenesProducto 
+{
+    background-color: #141414;
+    font-family: 'Open Sans', sans-serif;
+    text-align-last: center;
+    color: #FFF;
+    width: 650px;
+    height: 300px;
+}
